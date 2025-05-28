@@ -56,7 +56,8 @@ export function OrdersTable({ orders: initialOrders }: OrdersTableProps) {
         order.pizzaType.toLowerCase().includes(searchLower);
 
       // Status filter
-      const matchesStatus = !statusFilter || order.status === statusFilter;
+      const matchesStatus =
+        statusFilter == "all" || !statusFilter || order.status === statusFilter;
 
       return matchesSearch && matchesStatus;
     })
